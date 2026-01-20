@@ -1,208 +1,173 @@
 # Figures
 
-<p>
 This directory contains all scripts used to generate the figures presented in the manuscript:
-</p>
 
-<p>
-<em>“Multi-omics survival modeling identifies paclitaxel resistance–informed prognostic genes and pathways and derives a validated gene signature in breast cancer.”</em>
-</p>
+*“Multi-omics survival modeling identifies paclitaxel resistance–informed prognostic genes and pathways and derives a validated gene signature in breast cancer.”*
 
-<p>
 Each script reproduces one manuscript figure using preprocessed molecular and clinical data. Below, we summarize the purpose and content of each figure.
-</p>
 
-<hr />
+---
 
-<h2>Fig. 1 — Clinical characteristics of METABRIC and TCGA-BRCA cohorts</h2>
+## Fig. 1 — Clinical characteristics of METABRIC and TCGA-BRCA cohorts
 
-<p><strong>Script:</strong> <code>Figure1_Manuscript.R</code></p>
+**Script:** `Figure1_Manuscript.R`
 
-<p>This figure summarizes baseline clinical characteristics of the two cohorts used in the study:</p>
-<ul>
-  <li>Age distributions (histograms with mean and median values)</li>
-  <li>Tumor stage distributions (including NA categories)</li>
-  <li>PAM50 intrinsic subtype composition (including unclassified samples)</li>
-</ul>
+This figure summarizes baseline clinical characteristics of the two cohorts used in the study:
 
-<p>
-A single legend is used across panels, with <strong>red</strong> representing <strong>METABRIC</strong> and <strong>blue</strong> representing <strong>TCGA-BRCA</strong>. This figure establishes cohort comparability and highlights key clinical differences.
-</p>
+- Age distributions (histograms with mean and median values)
+- Tumor stage distributions (including NA categories)
+- PAM50 intrinsic subtype composition (including unclassified samples)
 
-<hr />
+A single legend is used across panels, with **red** representing **METABRIC** and **blue** representing **TCGA-BRCA**.  
+This figure establishes cohort comparability and highlights key clinical differences.
 
-<h2>Fig. 2 — Independent gene- and pathway-level prognostic associations</h2>
+---
 
-<p><strong>Script:</strong> <code>Figure2_Manuscript.R</code></p>
+## Fig. 2 — Independent gene- and pathway-level prognostic associations
 
-<p>This figure identifies molecular features independently associated with overall survival:</p>
-<ul>
-  <li>Gene-level volcano plots from multivariate CoxPH models (METABRIC and TCGA-BRCA)</li>
-  <li>Forest plot of reproducible prognostic genes with fixed-effect meta-analysis</li>
-  <li>Pathway-level volcano plots based on expression- and CNA-derived pathway scores</li>
-  <li>Forest plot of pathway-level hazard ratios across cohorts and meta-analysis</li>
-</ul>
+**Script:** `Figure2_Manuscript.R`
 
-<p>
-Color coding distinguishes <strong>expression-driven (blue)</strong> and <strong>CNA-driven (red)</strong> effects. This figure defines the candidate genes and pathways used in downstream modeling.
-</p>
+This figure identifies molecular features independently associated with overall survival:
 
-<hr />
+- Gene-level volcano plots from multivariate CoxPH models (METABRIC and TCGA-BRCA)
+- Forest plot of reproducible prognostic genes with fixed-effect meta-analysis
+- Pathway-level volcano plots based on expression- and CNA-derived pathway scores
+- Forest plot of pathway-level hazard ratios across cohorts and meta-analysis
 
-<h2>Fig. 3 — KM survival analyses of independently prognostic genes</h2>
+Color coding distinguishes **expression-driven (blue)** and **CNA-driven (red)** effects.  
+This figure defines the candidate genes and pathways used in downstream modeling.
 
-<p><strong>Script:</strong> <code>Figure3_Manuscript.R</code></p>
+---
 
-<p>Kaplan–Meier analyses evaluate survival stratification for selected gene-level markers:</p>
-<ul>
-  <li>SERPINE1 expression (maxstat-based, cohort-specific cutoffs)</li>
-  <li>CNA status of CXCR4, LAMB2, CLDN1, and LYPD6B (cohort-specific medians)</li>
-</ul>
+## Fig. 3 — KM survival analyses of independently prognostic genes
 
-<p>
-Hazard ratios are derived from CoxPH models adjusted for age, tumor stage, and PAM50 subtype. High expression or CNA-altered status consistently associates with poorer OS.
-</p>
+**Script:** `Figure3_Manuscript.R`
 
-<hr />
+Kaplan–Meier analyses evaluate survival stratification for selected gene-level markers:
 
-<h2>Fig. 4 — Independent prognostic relevance of Ras signaling pathway CNA burden</h2>
+- SERPINE1 expression (maxstat-based, cohort-specific cutoffs)
+- CNA status of CXCR4, LAMB2, CLDN1, and LYPD6B (cohort-specific medians)
 
-<p><strong>Script:</strong> <code>Figure4_Manuscript.R</code></p>
+Hazard ratios are derived from CoxPH models adjusted for age, tumor stage, and PAM50 subtype.  
+High expression or CNA-altered status consistently associates with poorer OS.
 
-<p>This figure evaluates Ras signaling pathway CNA burden using:</p>
-<ul>
-  <li>KM stratification in METABRIC and TCGA-BRCA</li>
-  <li>Systematic CoxPH modeling with and without clinical covariates</li>
-  <li>Fixed-effect meta-analysis</li>
-</ul>
+---
 
-<p>
-Patients with high pathway-level CNA burden show significantly worse survival. This figure establishes Ras signaling as the only pathway retaining independent prognostic value after adjustment.
-</p>
+## Fig. 4 — Independent prognostic relevance of Ras signaling pathway CNA burden
 
-<hr />
+**Script:** `Figure4_Manuscript.R`
 
-<h2>Fig. 5 — Multicollinearity assessment and gene-signature feature selection</h2>
+This figure evaluates Ras signaling pathway CNA burden using:
 
-<p><strong>Script:</strong> <code>Figure5_Manuscript.R</code></p>
+- KM stratification in METABRIC and TCGA-BRCA
+- Systematic CoxPH modeling with and without clinical covariates
+- Fixed-effect meta-analysis
 
-<p>This figure guides selection of non-redundant genes for the prognostic signature:</p>
-<ul>
-  <li>Correlation heatmap using point-biserial (expression–CNA) and phi coefficients (CNA–CNA)</li>
-  <li>Model discrimination (C-index)</li>
-  <li>Model complexity (AIC)</li>
-  <li>Incremental contribution (likelihood ratio tests)</li>
-</ul>
+Patients with high pathway-level CNA burden show significantly worse survival.  
+This figure establishes Ras signaling as the only pathway retaining independent prognostic value after adjustment.
 
-<p>
-Results justify selection of <strong>LYPD6B CNA</strong> over <strong>CXCR4 CNA</strong> for the final signature.
-</p>
+---
 
-<hr />
+## Fig. 5 — Multicollinearity assessment and gene-signature feature selection
 
-<h2>Fig. 6 — Prognostic validation of the gene-signature risk score</h2>
+**Script:** `Figure5_Manuscript.R`
 
-<p><strong>Script:</strong> <code>Figure6_Manuscript.R</code></p>
+This figure guides selection of non-redundant genes for the prognostic signature:
 
-<p>This figure validates the gene-signature risk score:</p>
-<ul>
-  <li>CoxPH models in METABRIC (no clinical covariates) and TCGA-BRCA (with covariates)</li>
-  <li>KM stratification using a median cutoff defined in METABRIC and applied unchanged to TCGA-BRCA</li>
-</ul>
+- Correlation heatmap using point-biserial (expression–CNA) and phi coefficients (CNA–CNA)
+- Model discrimination (C-index)
+- Model complexity (AIC)
+- Incremental contribution (likelihood ratio tests)
 
-<p>
+Results justify selection of **LYPD6B CNA** over **CXCR4 CNA** for the final signature.
+
+---
+
+## Fig. 6 — Prognostic validation of the gene-signature risk score
+
+**Script:** `Figure6_Manuscript.R`
+
+This figure validates the gene-signature risk score:
+
+- CoxPH models in METABRIC (no clinical covariates) and TCGA-BRCA (with covariates)
+- KM stratification using a median cutoff defined in METABRIC and applied unchanged to TCGA-BRCA
+
 The risk score remains independently prognostic across cohorts and model specifications.
-</p>
 
-<hr />
+---
 
-<h2>Fig. 7 — Temporal performance of the gene-signature risk score</h2>
+## Fig. 7 — Temporal performance of the gene-signature risk score
 
-<p><strong>Script:</strong> <code>Figure7_Manuscript.R</code></p>
+**Script:** `Figure7_Manuscript.R`
 
-<p>Temporal robustness of the gene signature is evaluated using:</p>
-<ul>
-  <li>Restricted Mean Survival Time (RMST) differences</li>
-  <li>Time-dependent AUC analyses (up to 200 months)</li>
-</ul>
+Temporal robustness of the gene signature is evaluated using:
 
-<p>
+- Restricted Mean Survival Time (RMST) differences
+- Time-dependent AUC analyses (up to 200 months)
+
 Results show sustained prognostic separation with cohort-specific temporal dynamics.
-</p>
 
-<hr />
+---
 
-<h2>Fig. 8 — KM analysis of pathway-level CNA burden across cohorts</h2>
+## Fig. 8 — KM analysis of pathway-level CNA burden across cohorts
 
-<p><strong>Script:</strong> <code>Figure8_Manuscript.R</code></p>
+**Script:** `Figure8_Manuscript.R`
 
-<p>KM analyses assess CNA burden for:</p>
-<ul>
-  <li>Ras signaling</li>
-  <li>Axon guidance</li>
-  <li>Focal adhesion</li>
-</ul>
+KM analyses assess CNA burden for:
 
-<p>
-Median cutoffs derived in METABRIC are applied unchanged to TCGA-BRCA. High CNA burden consistently associates with poorer OS across pathways and cohorts.
-</p>
+- Ras signaling
+- Axon guidance
+- Focal adhesion
 
-<hr />
+Median cutoffs derived in METABRIC are applied unchanged to TCGA-BRCA.  
+High CNA burden consistently associates with poorer OS across pathways and cohorts.
 
-<h2>Fig. 9 — Combined gene-signature and pathway-level CNA models</h2>
+---
 
-<p><strong>Script:</strong> <code>Figure9_Manuscript.R</code></p>
+## Fig. 9 — Combined gene-signature and pathway-level CNA models
 
-<p>This figure evaluates whether pathway-level CNA scores improve prediction beyond the gene signature:</p>
-<ul>
-  <li>Heatmap of HRs across model combinations</li>
-  <li>Forest plots of HRs and 95% CIs</li>
-</ul>
+**Script:** `Figure9_Manuscript.R`
 
-<p>
+This figure evaluates whether pathway-level CNA scores improve prediction beyond the gene signature:
+
+- Heatmap of HRs across model combinations
+- Forest plots of HRs and 95% CIs
+
 While pathway CNA scores are prognostic individually, their effects are attenuated when the gene signature is included, demonstrating the dominant contribution of the gene-level model.
-</p>
 
-<hr />
+---
 
-<h2>Fig. 10 — Integration with clinical covariates</h2>
+## Fig. 10 — Integration with clinical covariates
 
-<p><strong>Script:</strong> <code>Figure10_Manuscript.R</code></p>
+**Script:** `Figure10_Manuscript.R`
 
-<p>Multivariate CoxPH models integrate:</p>
-<ul>
-  <li>Clinical covariates</li>
-  <li>Gene-signature risk score</li>
-  <li>Ras signaling pathway CNA score</li>
-</ul>
+Multivariate CoxPH models integrate:
 
-<p>
+- Clinical covariates
+- Gene-signature risk score
+- Ras signaling pathway CNA score
+
 The gene signature remains strongly prognostic across all clinically adjusted models, while Ras pathway effects are attenuated after signature inclusion.
-</p>
 
-<hr />
+---
 
-<h2>Fig. 11 — Network representation of resistance-associated prognostic biology</h2>
+## Fig. 11 — Network representation of resistance-associated prognostic biology
 
-<p><strong>Script:</strong> <code>Figure11_Manuscript.R</code></p>
+**Script:** `Figure11_Manuscript.R`
 
-<p>This network contextualizes prognostic genes and pathways identified in paclitaxel resistance:</p>
-<ul>
-  <li>Nodes represent genes or KEGG pathways</li>
-  <li>Edges represent gene–pathway membership</li>
-  <li>Node color and shape encode prognostic significance and molecular modality</li>
-  <li>Hypergeometric testing identifies non-random accumulation of prognostic genes</li>
-</ul>
+This network contextualizes prognostic genes and pathways identified in paclitaxel resistance:
 
-<p>
+- Nodes represent genes or KEGG pathways
+- Edges represent gene–pathway membership
+- Node color and shape encode prognostic significance and molecular modality
+- Hypergeometric testing identifies non-random accumulation of prognostic genes
+
 The Axon guidance pathway shows significant enrichment of CNA-driven prognostic genes.
-</p>
 
-<hr />
+---
 
-<h2>Notes</h2>
-<ul>
-  <li>All figures are generated using R (ggplot2-based visualization).</li>
-  <li>Scripts assume that preprocessing and survival-analysis outputs are available.</li>
-  <li>Large input/output files are intentionally excluded from version control.</li>
-</ul>
+## Notes
+
+- All figures are generated using R (ggplot2-based visualization).
+- Scripts assume that preprocessing and survival-analysis outputs are available.
+- Large input and output files are intentionally excluded from version control.
