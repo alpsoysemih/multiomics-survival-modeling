@@ -99,4 +99,3 @@ This script confirms which resistance-associated pathways retain prognostic rele
   - Kaplan–Meier stratification
   - Meta-analyses
   - Prognostic signature construction
-- Large intermediate and output files are excluded from version control.
