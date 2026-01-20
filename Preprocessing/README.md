@@ -5,7 +5,7 @@ This directory contains preprocessing steps required to run the survival modelin
 > **Important note (TCGA-BRCA molecular preprocessing):**  
 > TCGA-BRCA **gene expression** and **CNA** preprocessing can be reproduced by running the scripts available in my GitHub repository:  
 > **alpsoysemih/multiomics-drug-response-resistance-tl**.  
-> Once TCGA-BRCA expression and CNA matrices are generated in processed form, the remaining steps required for survival modeling—such as **z-score normalization**, **CNA binarization**, and computation of **pathway CNA scores**—are implemented directly inside the downstream analysis scripts in this repository.
+> Once TCGA-BRCA expression and CNA matrices are generated in processed form, the remaining steps required for survival modeling such as **z-score normalization**, **CNA binarization**, and computation of **pathway CNA scores** are implemented directly inside the downstream analysis scripts in this repository.
 
 ---
 
