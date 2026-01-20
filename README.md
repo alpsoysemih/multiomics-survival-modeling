@@ -127,11 +127,18 @@ All analyses were performed in **R (version ≥ 4.4.2)**.
 ⸻
 
 ## Reproducibility
-- **METABRIC** is used exclusively as the training cohort.
+- **METABRIC** is used as the training cohort.
 - **TCGA-BRCA** serves as an independent validation cohort.
-- All cutoffs (gene-level, pathway-level, and signature-level) are derived **only from METABRIC**.
-- The same predefined cutoffs are applied **unchanged** to TCGA-BRCA.
-- No cohort-specific tuning, re-optimization, or threshold adjustment is performed in the validation cohort.
+
+- **Gene-level analyses**
+  - Expression-based gene stratification uses **cohort-specific cutoffs**, determined by maximally selected rank statistics (maxstat).
+  - CNA-based gene stratification uses **cohort-specific median cutoffs**.
+
+- **Pathway-level and gene-signature analyses**
+  - All cutoffs are derived **exclusively from METABRIC**.
+  - The same predefined cutoffs are applied **unchanged** to TCGA-BRCA.
+
+- No cohort-specific tuning, re-optimization, or threshold adjustment is performed for pathway-level or signature-level validation.
 
 ⸻
 
