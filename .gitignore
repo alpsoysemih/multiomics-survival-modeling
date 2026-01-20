@@ -17,3 +17,12 @@ Input Files/
 *.rds
 *.RData
 *.zip
+
+# Outputs
+Output Files/
+
+# macOS
+.DS_Store
+
+# Outputs
+Output Files/
