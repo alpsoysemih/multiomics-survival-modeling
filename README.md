@@ -17,12 +17,13 @@ Overview
 Most prognostic biomarkers in breast cancer are identified independently of treatment-related biology. In this study, we explicitly anchor survival analyses to paclitaxel resistance–associated genes and pathways, previously identified using deep learning–based drug response modeling and pathfindR enrichment analysis.
 
 Using two independent breast cancer cohorts (METABRIC and TCGA-BRCA), we perform:
-	•	Gene-level and pathway-level Cox proportional hazards (CoxPH) modeling
-	•	Integration of gene expression and CNA data
-	•	Clinical covariate adjustment (age, tumor stage, PAM50 subtype)
-	•	Cross-cohort validation with fixed cutoffs
-	•	Kaplan–Meier (KM), log-rank testing, RMST, and time-dependent AUC analyses
-	•	Network-based contextualization and hypergeometric over-representation testing
+
+- Gene-level and pathway-level Cox proportional hazards (CoxPH) modeling  
+- Integration of gene expression and copy number alteration (CNA) data  
+- Clinical covariate adjustment (age, tumor stage, PAM50 subtype)  
+- Cross-cohort validation with fixed, training-derived cutoffs  
+- Kaplan–Meier (KM) analysis, log-rank testing, RMST, and time-dependent AUC analyses  
+- Network-based contextualization and hypergeometric over-representation testing  
 
 The repository provides fully reproducible code for all analyses and figures reported in the manuscript.
 
