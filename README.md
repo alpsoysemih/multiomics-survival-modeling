@@ -105,17 +105,24 @@ Analysis Workflow
 
 Software & Dependencies
 
-Analyses were performed in R (≥ 4.4.2).
+## Software and Package Versions
+All analyses were performed in **R (version ≥ 4.4.2)**.
 
-Key packages include:
-	•	survival, survminer
-	•	timeROC, survRM2
-	•	TCGAbiolinks
-	•	dplyr, tidyr
-	•	ggplot2
-	•	igraph
+### Core R Packages
+- **survival** (v3.8.3): Cox proportional hazards modeling, C-index, AIC, and likelihood ratio tests
+- **survminer** (v0.5.1): Kaplan–Meier visualization and log-rank testing
+- **survRM2** (v1.0.4): Restricted mean survival time (RMST) analysis
+- **timeROC** (v0.4): Time-dependent AUC analysis
+- **TCGAbiolinks** (v2.34.1): Retrieval of TCGA-BRCA clinical and molecular data
+- **dplyr** (v1.1.4) and **tidyr** (v1.3.1): Data manipulation and preprocessing
+- **ggplot2** (v4.0.1): Figure generation and visualization
+- **igraph** (v2.2.1): Network construction and hypergeometric over-representation testing
+- **stats** (base R): Statistical testing and meta-analysis utilities
 
-Exact versions are reported in the manuscript.
+### Notes
+- Meta-analyses were performed using inverse-variance weighting on log hazard ratios.
+- All figures in the repository were generated using **ggplot2** and related visualization utilities.
+- Exact package versions and methodological details are reported in the associated manuscript.
 
 ⸻
 
