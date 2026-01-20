@@ -84,4 +84,3 @@ This script provides strict cross-cohort validation of pathway-level CNA-based s
 - All analyses focus on **overall survival (OS)**.
 - Survival time is expressed in **months** in all KM plots.
 - Numbers at risk are displayed below each KM curve.
-- Large input and output files are excluded from version control.
