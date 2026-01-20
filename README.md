@@ -32,15 +32,17 @@ The repository provides fully reproducible code for all analyses and figures rep
 Data Sources
 
 This project uses publicly available datasets:
-	•	METABRIC
-	•	Gene expression (Illumina microarrays, z-scores)
-	•	Copy number alterations (GISTIC scores)
-	•	Clinical survival data
-	•	Source: Synapse (syn1688369)
-	•	TCGA-BRCA
-	•	RNA-seq gene expression (RSEM → TPM → log2 → z-score)
-	•	CNA profiles (Affymetrix SNP 6.0; CBS segmentation)
-	•	Clinical data retrieved using TCGAbiolinks
+
+- **METABRIC**
+  - Gene expression data (Illumina microarrays, z-scores)
+  - Copy number alteration (CNA) data (GISTIC scores)
+  - Clinical survival data
+  - Source: Synapse (syn1688369)
+
+- **TCGA-BRCA**
+  - RNA-seq gene expression data (RSEM → TPM → log2 transformation → z-score normalization)
+  - CNA profiles (Affymetrix SNP 6.0 arrays; CBS segmentation)
+  - Clinical data retrieved using the `TCGAbiolinks` R package
 
 All analyses use overall survival (OS) as the endpoint.
 
