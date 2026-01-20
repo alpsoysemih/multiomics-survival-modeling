@@ -52,45 +52,45 @@ All analyses use overall survival (OS) as the endpoint.
 
 Analysis Workflow
 
-1. Data Preprocessing
-	•	Expression normalization and z-scoring
-	•	CNA binarization (altered vs copy-neutral)
-	•	Clinical covariate harmonization (tumor stage, PAM50 subtype)
+## Data Preprocessing
+- Expression normalization and z-score standardization
+- CNA binarization (altered vs. copy-neutral)
+- Clinical covariate harmonization (tumor stage and PAM50 subtype)
 
-2. Gene-Level Survival Modeling
-	•	CoxPH models using:
-	•	Expression only
-	•	CNA only
-	•	Expression + CNA
-	•	Expression × CNA interaction
-	•	Models evaluated with and without clinical covariates
-	•	Cross-cohort meta-analysis of hazard ratios
+## Gene-Level Survival Modeling
+- Cox proportional hazards (CoxPH) models using:
+  - Expression only
+  - CNA only
+  - Expression + CNA
+  - Expression × CNA interaction
+- Models evaluated with and without clinical covariates
+- Cross-cohort meta-analysis of hazard ratios
 
-3. Pathway-Level Survival Modeling
-	•	Pathway activity scores derived from paclitaxel resistance–associated pathways
-	•	Separate expression-based and CNA-based pathway scores
-	•	Identification of independently prognostic pathways
+## Pathway-Level Survival Modeling
+- Pathway activity scores derived from paclitaxel resistance–associated pathways
+- Separate expression-based and CNA-based pathway scores
+- Identification of independently prognostic pathways
 
-4. Prognostic Signature Construction
-	•	Selection of non-redundant prognostic genes
-	•	Multicollinearity assessment:
-	•	Point-biserial correlation
-	•	Phi coefficient
-	•	Model selection using:
-	•	C-index
-	•	AIC
-	•	Likelihood ratio tests (LRT)
-	•	Final gene signature trained in METABRIC and validated in TCGA-BRCA
+## Prognostic Signature Construction
+- Selection of non-redundant prognostic genes
+- Multicollinearity assessment using:
+  - Point-biserial correlation
+  - Phi coefficient
+- Model selection based on:
+  - Concordance index (C-index)
+  - Akaike information criterion (AIC)
+  - Likelihood ratio tests (LRT)
+- Final gene signature trained in METABRIC and validated in TCGA-BRCA
 
-5. Survival Stratification & Temporal Evaluation
-	•	Kaplan–Meier analyses with fixed cutoffs
-	•	Restricted Mean Survival Time (RMST)
-	•	Time-dependent AUC analyses up to 200 months
+## Survival Stratification and Temporal Evaluation
+- Kaplan–Meier analyses with fixed cutoffs
+- Restricted Mean Survival Time (RMST) analysis
+- Time-dependent AUC analyses up to 200 months
 
-6. Network Analysis
-	•	Integration of prognostic genes and pathways
-	•	Visualization of gene–pathway relationships
-	•	Hypergeometric testing for non-random accumulation of prognostic genes
+## Network Analysis
+- Integration of prognostic genes and pathways
+- Visualization of gene–pathway relationships
+- Hypergeometric testing for non-random accumulation of prognostic genes
 
 ⸻
 
