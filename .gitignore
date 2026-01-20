@@ -1,0 +1,11 @@
+
+# Large files
+*.zip
+*.rds
+*.RData
+*.pdf
+*.png
+*.jpg
+*.xlsx
+*.pptx
+
