@@ -126,11 +126,12 @@ All analyses were performed in **R (version ≥ 4.4.2)**.
 
 ⸻
 
-Reproducibility
-	•	METABRIC is used as the training cohort
-	•	TCGA-BRCA serves as an independent validation cohort
-	•	Cutoffs derived in METABRIC are applied unchanged to TCGA-BRCA
-	•	No cohort-specific tuning is performed in validation
+## Reproducibility
+- **METABRIC** is used exclusively as the training cohort.
+- **TCGA-BRCA** serves as an independent validation cohort.
+- All cutoffs (gene-level, pathway-level, and signature-level) are derived **only from METABRIC**.
+- The same predefined cutoffs are applied **unchanged** to TCGA-BRCA.
+- No cohort-specific tuning, re-optimization, or threshold adjustment is performed in the validation cohort.
 
 ⸻
 
