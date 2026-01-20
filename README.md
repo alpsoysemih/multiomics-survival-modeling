@@ -146,7 +146,6 @@ No cohort-specific tuning, re-optimization, or threshold adjustment is performed
 ---
 
 ## Contact
-
-**Corresponding author**  
-Osman Ugur Sezerman  
-📧 ugur.sezerman@acibadem.edu.tr
+ 
+Semih Alpsoy  
+📧 alpsoy@tau.edu.tr
