@@ -9,3 +9,11 @@
 *.xlsx
 *.pptx
 
+
+# Large input data (do not commit)
+Input Files/
+*.tsv
+*.csv
+*.rds
+*.RData
+*.zip
