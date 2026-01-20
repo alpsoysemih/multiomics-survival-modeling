@@ -1,8 +1,8 @@
 # multiomics-survival-modeling
 Multi-omics survival modeling in breast cancer integrating gene expression and copy number alterations to identify paclitaxel resistance–informed prognostic genes, pathways, and a validated gene signature. Includes CoxPH, KM, RMST, time-dependent AUC, pathway scoring, network analysis, and cross-cohort validation in METABRIC and TCGA-BRCA.
 
-Paclitaxel Resistance–Informed Multi-Omics Survival Modeling in Breast Cancer
 
+# Paclitaxel Resistance–Informed Multi-Omics Survival Modeling in Breast Cancer
 This repository contains the full analysis pipeline accompanying the manuscript:
 
 “Multi-omics survival modeling identifies paclitaxel resistance–informed prognostic genes and pathways and derives a validated gene signature in breast cancer.”
