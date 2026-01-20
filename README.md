@@ -94,12 +94,12 @@ Analysis Workflow
 
 ⸻
 
-Key Findings Implemented in This Repository
-	•	Identification of SERPINE1 (expression) and CLDN1, CXCR4, LAMB2, LYPD6B (CNAs) as reproducible prognostic genes
-	•	Construction of a parsimonious gene-level prognostic signature validated across cohorts
-	•	Identification of Ras signaling as the only independently prognostic pathway after clinical adjustment
-	•	Demonstration of non-random accumulation of prognostic genes in Axon guidance
-	•	Evidence that gene-level signatures outperform pathway-level CNA scores in prognostic modeling
+## Key Findings Implemented in This Repository
+- Identification of **SERPINE1** (expression) and **CLDN1, CXCR4, LAMB2, and LYPD6B** (CNAs) as reproducible prognostic genes across independent cohorts
+- Construction of a parsimonious gene-level prognostic signature with robust cross-cohort validation
+- Identification of **Ras signaling** as the only pathway retaining independent prognostic significance after clinical adjustment
+- Demonstration of a non-random accumulation of prognostic genes within the **Axon guidance** pathway
+- Evidence that gene-level prognostic signatures outperform pathway-level CNA scores in survival modeling
 
 ⸻
 
