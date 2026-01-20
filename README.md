@@ -140,14 +140,6 @@ All analyses were performed in **R (version ≥ 4.4.2)**.
 
 - No cohort-specific tuning, re-optimization, or threshold adjustment is performed for pathway-level or signature-level validation.
 
-⸻
-
-Citation
-
-If you use this code, please cite:
-
-Alpsoy S, Eyuboglu S, Sezerman OU.
-Multi-omics survival modeling identifies paclitaxel resistance–informed prognostic genes and pathways and derives a validated gene signature in breast cancer.
 
 ⸻
 
