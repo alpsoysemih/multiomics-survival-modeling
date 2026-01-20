@@ -1,0 +1,73 @@
+Gene: KRT13
+Model suffix: _E_C_EC
+N total: 1033; Events: 144
+----
+Four-group KM (Low/High x CNA=0/1):
+# A tibble: 4 × 3
+  int_group              n events
+  <fct>              <int>  <dbl>
+1 Low exp & CNA = 0    301     41
+2 Low exp & CNA = 1    216     36
+3 High exp & CNA = 0   335     42
+4 High exp & CNA = 1   181     25
+Four-group log-rank p: 0.1432
+----
+Two-group KM (interaction score = expr*cna, median cut):
+Median interaction score: 0
+# A tibble: 2 × 3
+  int_group_median     n events
+  <fct>            <int>  <dbl>
+1 Low interaction    964    137
+2 High interaction    69      7
+Two-group log-rank p: 0.3776
+----
+Optimal cutpoint KM (interaction score):
+Cutpoint on interaction score: -0.2249
+# A tibble: 2 × 3
+  int_group_opt        n events
+  <fct>            <int>  <dbl>
+1 Low interaction    290     52
+2 High interaction   743     92
+Optimal-cut log-rank p: 0.004407
+----
+Quartile-based KM (8 groups: expr quartile x CNA):
+# A tibble: 8 × 3
+  q_cna_group                n events
+  <fct>                  <int>  <dbl>
+1 Q1 (lowest) & CNA = 0    145     16
+2 Q2 & CNA = 0             156     25
+3 Q3 & CNA = 0             167     17
+4 Q4 (highest) & CNA = 0   168     25
+5 Q1 (lowest) & CNA = 1    114     22
+6 Q2 & CNA = 1             102     14
+7 Q3 & CNA = 1              91     16
+8 Q4 (highest) & CNA = 1    90      9
+8-group log-rank p: 0.03276
+----
+Quartile KM in CNA=0 subset (4 groups: expr quartiles):
+# A tibble: 4 × 3
+  expr_quartile     n events
+  <fct>         <int>  <dbl>
+1 Q1 (lowest)     145     16
+2 Q2              156     25
+3 Q3              167     17
+4 Q4 (highest)    168     25
+CNA=0 quartile log-rank p: 0.376
+----
+Quartile KM in CNA=1 subset (4 groups: expr quartiles):
+# A tibble: 4 × 3
+  expr_quartile     n events
+  <fct>         <int>  <dbl>
+1 Q1 (lowest)     114     22
+2 Q2              102     14
+3 Q3               91     16
+4 Q4 (highest)     90      9
+CNA=1 quartile log-rank p: 0.06526
+----
+Refitted Cox (Surv ~ expr + cna + expr:cna):
+  expr:cna: HR=0.677, 95% CI [0.431, 1.062], p=0.08971
+PH test (cox.zph) for expr:cna: p=0.7247
+PH test (cox.zph) GLOBAL p=0.2649
+----
+Spline Cox plot saved to: /Volumes/Expansion/Prognostic_Analysis/Results/TCGA-BRCA/TCGA_KM_Gene_OS/E_C_EC_Age_Stg/Cox_spline_exprCNA_KRT13_E_C_EC.pdf
+----

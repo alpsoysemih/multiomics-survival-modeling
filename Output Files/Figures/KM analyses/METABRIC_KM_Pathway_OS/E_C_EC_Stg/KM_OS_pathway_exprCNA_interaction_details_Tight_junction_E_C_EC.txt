@@ -1,0 +1,73 @@
+Pathway: Tight junction
+Model suffix: _E_C_EC
+N total: 1980; Events: 1143
+----
+Four-group KM (Low/High expr x Low/High CNA):
+# A tibble: 4 × 3
+  int_group                n events
+  <fct>                <int>  <dbl>
+1 Low expr & Low CNA     523    284
+2 Low expr & High CNA    467    299
+3 High expr & Low CNA    628    326
+4 High expr & High CNA   362    234
+Four-group log-rank p: 0.0006387
+----
+Two-group KM (interaction score = expr*cna, median cut):
+Median interaction score: -0.221
+# A tibble: 2 × 3
+  int_group_median     n events
+  <fct>            <int>  <dbl>
+1 Low interaction    990    614
+2 High interaction   990    529
+Two-group log-rank p: 8.723e-05
+----
+Optimal cutpoint KM (interaction score):
+Cutpoint on interaction score: -0.1883
+# A tibble: 2 × 3
+  int_group_opt        n events
+  <fct>            <int>  <dbl>
+1 Low interaction   1172    714
+2 High interaction   808    429
+Optimal-cut log-rank p: 5.827e-05
+----
+Quartile-based KM (8 groups: expr quartile x CNA group):
+# A tibble: 8 × 3
+  q_cna_group                 n events
+  <fct>                   <int>  <dbl>
+1 Q1 (lowest) & Low CNA     232    133
+2 Q2 & Low CNA              291    151
+3 Q3 & Low CNA              299    156
+4 Q4 (highest) & Low CNA    329    170
+5 Q1 (lowest) & High CNA    263    160
+6 Q2 & High CNA             204    139
+7 Q3 & High CNA             197    121
+8 Q4 (highest) & High CNA   165    113
+8-group log-rank p: 0.001162
+----
+Quartile KM in Low CNA subset (4 groups: expr quartiles):
+# A tibble: 4 × 3
+  expr_quartile     n events
+  <fct>         <int>  <dbl>
+1 Q1 (lowest)     232    133
+2 Q2              291    151
+3 Q3              299    156
+4 Q4 (highest)    329    170
+Low CNA quartile log-rank p: 0.05227
+----
+Quartile KM in High CNA subset (4 groups: expr quartiles):
+# A tibble: 4 × 3
+  expr_quartile     n events
+  <fct>         <int>  <dbl>
+1 Q1 (lowest)     263    160
+2 Q2              204    139
+3 Q3              197    121
+4 Q4 (highest)    165    113
+High CNA quartile log-rank p: 0.4118
+----
+Refitted Cox (Surv ~ expr + cna + expr:cna) on PATHWAY scores:
+  expr:cna: HR=2.977, 95% CI [1.245, 7.114], p=0.01414
+PH test (cox.zph) for expr:cna: p=0.06489
+PH test (cox.zph) GLOBAL p=0.01343
+----
+Spline Cox plot saved to: /Volumes/Expansion/Prognostic_Analysis/Results/METABRIC/METABRIC_KM_Pathway_OS/E_C_EC_Stg/Cox_spline_OS_pathway_exprCNA_Tight_junction_E_C_EC.pdf
+----
