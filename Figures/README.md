@@ -1,0 +1,173 @@
+# Figures
+
+This directory contains all scripts used to generate the figures presented in the manuscript:
+
+*“Multi-omics survival modeling identifies paclitaxel resistance–informed prognostic genes and pathways and derives a validated gene signature in breast cancer.”*
+
+Each script reproduces one manuscript figure using preprocessed molecular and clinical data. Below, we summarize the purpose and content of each figure.
+
+---
+
+## Fig. 1 — Clinical characteristics of METABRIC and TCGA-BRCA cohorts
+
+**Script:** `Figure1_Manuscript.R`
+
+This figure summarizes baseline clinical characteristics of the two cohorts used in the study:
+
+- Age distributions (histograms with mean and median values)
+- Tumor stage distributions (including NA categories)
+- PAM50 intrinsic subtype composition (including unclassified samples)
+
+A single legend is used across panels, with **red** representing **METABRIC** and **blue** representing **TCGA-BRCA**.  
+This figure establishes cohort comparability and highlights key clinical differences.
+
+---
+
+## Fig. 2 — Independent gene- and pathway-level prognostic associations
+
+**Script:** `Figure2_Manuscript.R`
+
+This figure identifies molecular features independently associated with overall survival:
+
+- Gene-level volcano plots from multivariate CoxPH models (METABRIC and TCGA-BRCA)
+- Forest plot of reproducible prognostic genes with fixed-effect meta-analysis
+- Pathway-level volcano plots based on expression- and CNA-derived pathway scores
+- Forest plot of pathway-level hazard ratios across cohorts and meta-analysis
+
+Color coding distinguishes **expression-driven (blue)** and **CNA-driven (red)** effects.  
+This figure defines the candidate genes and pathways used in downstream modeling.
+
+---
+
+## Fig. 3 — KM survival analyses of independently prognostic genes
+
+**Script:** `Figure3_Manuscript.R`
+
+Kaplan–Meier analyses evaluate survival stratification for selected gene-level markers:
+
+- SERPINE1 expression (maxstat-based, cohort-specific cutoffs)
+- CNA status of CXCR4, LAMB2, CLDN1, and LYPD6B (cohort-specific medians)
+
+Hazard ratios are derived from CoxPH models adjusted for age, tumor stage, and PAM50 subtype.  
+High expression or CNA-altered status consistently associates with poorer OS.
+
+---
+
+## Fig. 4 — Independent prognostic relevance of Ras signaling pathway CNA burden
+
+**Script:** `Figure4_Manuscript.R`
+
+This figure evaluates Ras signaling pathway CNA burden using:
+
+- KM stratification in METABRIC and TCGA-BRCA
+- Systematic CoxPH modeling with and without clinical covariates
+- Fixed-effect meta-analysis
+
+Patients with high pathway-level CNA burden show significantly worse survival.  
+This figure establishes Ras signaling as the only pathway retaining independent prognostic value after adjustment.
+
+---
+
+## Fig. 5 — Multicollinearity assessment and gene-signature feature selection
+
+**Script:** `Figure5_Manuscript.R`
+
+This figure guides selection of non-redundant genes for the prognostic signature:
+
+- Correlation heatmap using point-biserial (expression–CNA) and phi coefficients (CNA–CNA)
+- Model discrimination (C-index)
+- Model complexity (AIC)
+- Incremental contribution (likelihood ratio tests)
+
+Results justify selection of **LYPD6B CNA** over **CXCR4 CNA** for the final signature.
+
+---
+
+## Fig. 6 — Prognostic validation of the gene-signature risk score
+
+**Script:** `Figure6_Manuscript.R`
+
+This figure validates the gene-signature risk score:
+
+- CoxPH models in METABRIC (no clinical covariates) and TCGA-BRCA (with covariates)
+- KM stratification using a median cutoff defined in METABRIC and applied unchanged to TCGA-BRCA
+
+The risk score remains independently prognostic across cohorts and model specifications.
+
+---
+
+## Fig. 7 — Temporal performance of the gene-signature risk score
+
+**Script:** `Figure7_Manuscript.R`
+
+Temporal robustness of the gene signature is evaluated using:
+
+- Restricted Mean Survival Time (RMST) differences
+- Time-dependent AUC analyses (up to 200 months)
+
+Results show sustained prognostic separation with cohort-specific temporal dynamics.
+
+---
+
+## Fig. 8 — KM analysis of pathway-level CNA burden across cohorts
+
+**Script:** `Figure8_Manuscript.R`
+
+KM analyses assess CNA burden for:
+
+- Ras signaling
+- Axon guidance
+- Focal adhesion
+
+Median cutoffs derived in METABRIC are applied unchanged to TCGA-BRCA.  
+High CNA burden consistently associates with poorer OS across pathways and cohorts.
+
+---
+
+## Fig. 9 — Combined gene-signature and pathway-level CNA models
+
+**Script:** `Figure9_Manuscript.R`
+
+This figure evaluates whether pathway-level CNA scores improve prediction beyond the gene signature:
+
+- Heatmap of HRs across model combinations
+- Forest plots of HRs and 95% CIs
+
+While pathway CNA scores are prognostic individually, their effects are attenuated when the gene signature is included, demonstrating the dominant contribution of the gene-level model.
+
+---
+
+## Fig. 10 — Integration with clinical covariates
+
+**Script:** `Figure10_Manuscript.R`
+
+Multivariate CoxPH models integrate:
+
+- Clinical covariates
+- Gene-signature risk score
+- Ras signaling pathway CNA score
+
+The gene signature remains strongly prognostic across all clinically adjusted models, while Ras pathway effects are attenuated after signature inclusion.
+
+---
+
+## Fig. 11 — Network representation of resistance-associated prognostic biology
+
+**Script:** `Figure11_Manuscript.R`
+
+This network contextualizes prognostic genes and pathways identified in paclitaxel resistance:
+
+- Nodes represent genes or KEGG pathways
+- Edges represent gene–pathway membership
+- Node color and shape encode prognostic significance and molecular modality
+- Hypergeometric testing identifies non-random accumulation of prognostic genes
+
+The Axon guidance pathway shows significant enrichment of CNA-driven prognostic genes.
+
+---
+
+## Notes
+
+- All figures are generated using R (ggplot2-based visualization).
+- Scripts assume that preprocessing and survival-analysis outputs are available.
+- Large input and output files are intentionally excluded from version control.
